@@ -7,6 +7,11 @@
 public class CalcPiAtN {
     public static final long MAX_LONG = 9223372036854775783L;
 
+    /**
+     * Returns the nth digit of pi
+     * @param n - nth number of pi to return
+     * @return returns an integer value containing the nth digit of pi
+     */
     public int getDecimal(long n){
         return getDecimalNine(n)/100000000;
     }
