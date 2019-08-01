@@ -7,12 +7,16 @@
 public class CalcPiAtN {
     public static final long MAX_LONG = 9223372036854775783L;
 
+    public int getDecimal(long n){
+        return getDecimalNine(n)/100000000;
+    }
+
     /**
      * Returns the nth digit of pi followed by the next 8 numbers
      * @param n - nth number of pi to return
      * @return returns an integer value containing 8 digits after n
      */
-    public int getDecimal(long n) {
+    public int getDecimalNine(long n) {
         long av, a, vmax, N, num, den, k, kq, kq2, t, v, s, i;
         double sum;
 
@@ -79,7 +83,7 @@ public class CalcPiAtN {
             s = mulMod(s, t, av);
             sum = (sum + (double) s / (double) av) % 1;
         }
-        return (int) (sum * 1e9)/100000000; // 1e9 is 9 decimal places
+        return (int) (sum * 1e9); // 1e9 is 9 decimal places
     }
 
     private long mulMod(long a, long b, long m) {
